@@ -1,0 +1,185 @@
+<title>Fantasy Pharmacy</title>
+<link rel="stylesheet" href="fantasy.css">
+<header>
+<nav class="navbar">
+<a href="#home" class="logo">
+<img src="test4.jpeg" alt="Fantasy Pharmacy">
+<div class="logo-name">
+<h2>Fantasy</h2>
+<span>PHARMACY</span>
+</div>
+</a>
+<ul class="nav-links">
+<li><a href="#home">Home</a></li>
+<li><a href="#store">Medicines</a></li>
+<li><a href="#contact">Contact Us</a></li>
+</ul>
+<button class="cart-button" onclick="openCart()">🛒<span id="cart-count">0</span></button>
+</nav>
+</header>
+<main id="home">
+<section class="hero">
+<div class="hero-text">
+<span class="hero-small">FANTASY PHARMACY</span>
+<h1>Your Health,<span>Our Priority.</span></h1>
+<p>Find the medicines and healthcare products you need in one simple place.</p>
+<a href="#store" class="shop-button">Shop Now</a>
+</div>
+<div class="hero-image">
+<img src="test5.png" alt="Fantasy Pharmacy Logo" style="height: 500px; width: 500px; ">
+</div>
+</section>
+<section class="store" id="store">
+<div class="store-header">
+<div>
+<span class="section-small">FANTASY PHARMACY</span>
+<h2>Our Medicines</h2>
+</div>
+<div class="search-box">
+<input type="text" id="search" placeholder="Search medicines..." onkeyup="searchProducts()">
+<button>🔍</button>
+</div>
+</div>
+<div class="categories">
+<button class="category active" onclick="filterProducts('all', this)">All</button>
+<button class="category" onclick="filterProducts('medicine', this)">Medicines</button>
+<button class="category" onclick="filterProducts('vitamin', this)">Vitamins</button>
+<button class="category" onclick="filterProducts('care', this)">Personal Care</button>
+</div>
+<div class="products">
+<div class="product" data-category="medicine" data-name="Panadol Extra">
+<div class="product-image">
+<img src="https://cdn.chefaa.com/filters:format(webp)/public/uploads/products/panadol-extra-48-fc-tabs-pmv7-01762859439.png" alt="Panadol Extra">
+</div>
+<div class="product-info">
+<span class="product-category">MEDICINE</span>
+<h3>Panadol Extra</h3>
+<p>24 Tablets</p>
+<div class="product-bottom">
+<strong>85 EGP</strong>
+<button class="add-button" onclick="addToCart('Panadol Extra', 85)">Add</button>
+</div>
+</div>
+</div>
+<div class="product" data-category="medicine" data-name="Panadol Advance">
+<div class="product-image">
+<img src="https://img.ananinja.com/media/ninja-catalog-42/Banmaly/B84/06285096000811_1.png?w=3840&q=75" alt="Panadol Advance">
+</div>
+<div class="product-info">
+<span class="product-category">MEDICINE</span>
+<h3>Panadol Advance</h3>
+<p>24 Tablets</p>
+<div class="product-bottom">
+<strong>75 EGP</strong>
+<button class="add-button" onclick="addToCart('Panadol Advance', 75)">Add</button>
+</div>
+</div>
+</div>
+<div class="product" data-category="vitamin" data-name="Vitamin C">
+<div class="product-image">
+<img src="https://4deb4f30d3ceeb7ccf4ed7029328c64e.cdn.bubble.io/d75/f1735656240183x441590062725931900/Essentials%20-%20Vitamine%20D3%20Vegan.png" alt="Vitamin C">
+</div>
+<div class="product-info">
+<span class="product-category">VITAMIN</span>
+<h3>Vitamin C</h3>
+<p>30 Tablets</p>
+<div class="product-bottom">
+<strong>120 EGP</strong>
+<button class="add-button" onclick="addToCart('Vitamin C', 120)">Add</button>
+</div>
+</div>
+</div>
+<div class="product" data-category="vitamin" data-name="Multivitamins">
+<div class="product-image">
+<img src="https://ifit-eg.com/wp-content/uploads/2024/05/LIMITLESS-MAN-MAX-100-TAB.png" alt="Multivitamins">
+</div>
+<div class="product-info">
+<span class="product-category">VITAMIN</span>
+<h3>Multivitamins</h3>
+<p>30 Tablets</p>
+<div class="product-bottom">
+<strong>180 EGP</strong>
+<button class="add-button" onclick="addToCart('Multivitamins', 180)">Add</button>
+</div>
+</div>
+</div>
+<div class="product" data-category="care" data-name="Hand Sanitizer">
+<div class="product-image">
+<img src="https://105103-veritiv-prod.s3.amazonaws.com/Damroot/Lg/10071/IMAGE_20037815_Pic%201.png" alt="Hand Sanitizer">
+</div>
+<div class="product-info">
+<span class="product-category">PERSONAL CARE</span>
+<h3>Hand Sanitizer</h3>
+<p>100ml</p>
+<div class="product-bottom">
+<strong>55 EGP</strong>
+<button class="add-button" onclick="addToCart('Hand Sanitizer', 55)">Add</button>
+</div>
+</div>
+</div>
+<div class="product" data-category="care" data-name="Face Wash">
+<div class="product-image">
+<img src="https://healthway.com.bd/media/images/Kind_to_Skin_Moistu.original.jpegquality-60.format-webp.webp" alt="Face Wash">
+</div>
+<div class="product-info">
+<span class="product-category">PERSONAL CARE</span>
+<h3>Face Wash</h3>
+<p>150ml</p>
+<div class="product-bottom">
+<strong>140 EGP</strong>
+<button class="add-button" onclick="addToCart('Face Wash', 140)">Add</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="cart-section" id="cart">
+<div class="cart-container">
+<div class="cart-header">
+<div>
+<span class="section-small">YOUR ORDER</span>
+<h2>Shopping Cart</h2>
+</div>
+<button class="close-cart" onclick="closeCart()">×</button>
+</div>
+<div id="cart-items">
+<p class="empty-cart">Your cart is empty.</p>
+</div>
+<div class="cart-total">
+<span>Total</span>
+<strong id="cart-total">0 EGP</strong>
+</div>
+<button class="checkout-button" onclick="checkout()">Continue</button>
+</div>
+</section>
+<section class="contact" id="contact">
+<div class="contact-content">
+<span class="section-small">CONTACT US</span>
+<h2>Need Help?</h2>
+<p>Contact Fantasy Pharmacy if you have any questions about our products.</p>
+<div class="contact-info">
+<div>
+<strong>Email</strong>
+<span>fantasypharmacy@gmail.com</span>
+</div>
+<div>
+<strong>Phone</strong>
+<span>XXXXX XXXXX</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="footer-content">
+<div class="footer-logo">
+<img src="test3.png" alt="Fantasy Pharmacy">
+<div>
+<strong>Fantasy Pharmacy</strong>
+<span>Your trusted pharmacy.</span>
+</div>
+</div>
+<p>© 2026 Fantasy Pharmacy.</p>
+</div>
+</footer>
+<script src="fantasy.js"></script>
